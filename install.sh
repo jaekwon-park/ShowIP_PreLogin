@@ -9,7 +9,7 @@ cat << EOF > /usr/local/bin/get-ip-address
 ip=\$(type -p ip)
 \$ip a | grep "inet " | grep -v  "127.0.0.1" | awk '{print "IP/Subnet is [ "\$2" ]  NIC is [ " \$7" ]"}'
 EOF
-
+chmod +x /usr/local/bin/get-ip-address
 # Debian/ubuntu
 if [ $(grep -i ubuntu /proc/version | wc -l) -eq "1" ]
 then
@@ -29,6 +29,7 @@ cp /etc/issue-standard /etc/issue
 /usr/local/bin/get-ip-address >> /etc/issue
 echo "" >> /etc/issue
 EOF
+chmod +x /etc/network/if-up.d/show-ip-address
 fi
 
 #redhat/centos
@@ -45,6 +46,7 @@ cp /etc/issue-standard /etc/issue
 /usr/local/bin/get-ip-address >> /etc/issue
 echo "" >> /etc/issue
 EOF
+chmod +x /sbin/ifup-local
 fi
 }
 
