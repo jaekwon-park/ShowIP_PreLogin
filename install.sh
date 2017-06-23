@@ -14,7 +14,6 @@ chmod +x /usr/local/bin/get-ip-address
 if [ $(grep -i ubuntu /proc/version | wc -l) -eq "1" ]
 then
 cat << EOF > /etc/network/if-up.d/show-ip-address
-
 #!/bin/sh
 if [ "\$METHOD" = loopback ]; then
     exit 0
