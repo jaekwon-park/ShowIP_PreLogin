@@ -9,5 +9,5 @@ this script show linux ip login console
 install.sh -i 
 (will be effect to reboot)
 
-#remove 
+# remove 
 install.sh -d
