@@ -7,7 +7,7 @@ cp /etc/issue /etc/issue-standard
 cat << EOF > /usr/local/bin/get-ip-address
 #!/bin/bash
 ip=\$(type -p ip)
-\$ip a | grep "inet " | grep -v  "127.0.0.1" | awk '{print "IP/Subnet is [ "\$2" ]  NIC is [ " \$7" ]"}'
+\$ip a | grep "inet " | grep -v  "127.0.0.1" | awk '{print "IP/Subnet is [ "\$2" ]  NIC is [ " \$NF" ]"}'
 EOF
 chmod +x /usr/local/bin/get-ip-address
 # Debian/ubuntu
